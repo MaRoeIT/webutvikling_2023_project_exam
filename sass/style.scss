@@ -26,15 +26,35 @@ header{
     flex-direction: row;
     flex-wrap: wrap;
     article{
-        max-width: 350px;
+        display: flex;
+        flex-direction: column;
         min-width: 200px;
-        flex-grow: 2;
+        flex-grow: 0.25;
+        margin: 10px;
         img{
-            max-width: 350px;
             min-width: 200px;
+            flex-grow: 2;
             object-fit: contain;
         }
         // Note to self, its here to show the article boxes. remove after use
         border: 1px solid red;
     }
+}
+
+#portifolio_background{
+    background-image: url("../img/mobile_on_notebook.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    h1{
+        color: $black_color;
+        text-align: center;
+        margin: 100px 0;
+    }
+}
+
+#map{
+    height: 500px;
+    width: 100%;
 }

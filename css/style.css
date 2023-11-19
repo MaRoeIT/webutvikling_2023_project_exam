@@ -23,13 +23,33 @@ header {
   flex-wrap: wrap;
 }
 .port_article_controller article {
-  max-width: 350px;
+  display: flex;
+  flex-direction: column;
   min-width: 200px;
-  flex-grow: 2;
+  flex-grow: 0.25;
+  margin: 10px;
   border: 1px solid red;
 }
 .port_article_controller article img {
-  max-width: 350px;
   min-width: 200px;
+  flex-grow: 2;
   object-fit: contain;
+}
+
+#portifolio_background {
+  background-image: url("../img/mobile_on_notebook.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+}
+#portifolio_background h1 {
+  color: #000;
+  text-align: center;
+  margin: 100px 0;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */
