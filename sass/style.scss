@@ -1,6 +1,8 @@
 @import "partials/colors";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
 main{
+    font-family: 'Open Sans', sans-serif;
     section{
         border: 1px solid black;
         article{
@@ -28,12 +30,11 @@ header{
     article{
         display: flex;
         flex-direction: column;
+        max-width: 692px;
         min-width: 200px;
-        flex-grow: 0.25;
+        flex-grow: 1;
         margin: 10px;
         img{
-            min-width: 200px;
-            flex-grow: 2;
             object-fit: contain;
         }
         // Note to self, its here to show the article boxes. remove after use
