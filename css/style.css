@@ -175,6 +175,8 @@ footer ul li a {
   #home_headline {
     position: relative;
     height: 500px;
+    display: flex;
+    flex-direction: column;
   }
   #home_headline video {
     object-fit: cover;
@@ -186,14 +188,20 @@ footer ul li a {
   #home_headline h1 {
     z-index: 1;
     position: relative;
+    text-align: center;
   }
   #home_headline p {
     z-index: 1;
     position: relative;
+    text-align: center;
   }
   #home_headline a {
     z-index: 1;
     position: relative;
+    padding: 10px;
+    background-color: #e6bd43;
+    color: #000;
+    text-decoration: none;
   }
   footer {
     display: flex;

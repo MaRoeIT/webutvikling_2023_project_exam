@@ -180,6 +180,8 @@ footer{
     #home_headline{
         position: relative;
         height: 500px;
+        display: flex;
+        flex-direction: column;
         video{
             object-fit: cover;
             z-index: 0;
@@ -190,14 +192,20 @@ footer{
         h1{
             z-index: 1;
             position: relative;
+            text-align: center;
         }
         p{
             z-index: 1;
             position: relative;
+            text-align: center;
         }
         a{
             z-index: 1;
             position: relative;
+            padding: 10px;
+            background-color: $yellow_color;
+            color: $black_color;
+            text-decoration: none;
         }
     }
 
