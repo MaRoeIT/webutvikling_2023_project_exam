@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700&display=swap");
 main {
   font-family: "Open Sans", sans-serif;
 }
@@ -59,6 +59,16 @@ header nav ol li #selected_page {
   text-decoration: underline solid #e6bd43 3px;
 }
 
+#home_headline {
+  display: flex;
+  background-image: url(/img/mobile_on_notebook.webp);
+}
+#home_headline h1 {
+  text-align: center;
+}
+#home_headline p {
+  text-align: center;
+}
 .port_article_controller {
   display: flex;
   flex-direction: row;
@@ -134,49 +144,25 @@ footer ul li a {
 }
 
 @media only screen and (min-width: 700px) {
-  header {
-    border: 1px solid blue;
-  }
   header nav {
-    display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
-  }
-  header nav a {
-    margin: 10px;
-  }
-  header nav a img {
-    width: 120px;
-    height: 120px;
   }
   header nav ol {
-    display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
     justify-content: flex-end;
-    align-items: center;
     margin: 0 10px;
   }
   header nav ol li {
-    list-style: none;
     margin: 5px;
-  }
-  header nav ol li a {
-    text-decoration: none;
-    color: #000;
-    font-weight: 800;
-    padding: 10px;
-    font-family: "Open Sans", sans-serif;
-  }
-  header nav ol li #contact_button {
-    background-color: #e6bd43;
   }
   #home_headline {
     position: relative;
     height: 500px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   #home_headline video {
     object-fit: cover;
@@ -204,10 +190,8 @@ footer ul li a {
     text-decoration: none;
   }
   footer {
-    display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
   }
   footer ul {
     flex-direction: row;
