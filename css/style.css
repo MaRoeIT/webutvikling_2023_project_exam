@@ -160,10 +160,44 @@ header nav ol li #selected_page {
   text-decoration: none;
 }
 
+#portifolio_main section {
+  padding: 40px;
+}
+#portifolio_main section h2 {
+  border-bottom: 2px solid #e6bd43;
+  padding: 10px;
+}
+#portifolio_main section nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style: none;
+}
+#portifolio_main section nav ul li {
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid #000;
+}
+#portifolio_main section nav ul li a {
+  text-decoration: none;
+  color: #000;
+}
+#portifolio_main section section {
+  padding: 0;
+}
+#portifolio_main section section h3 {
+  border-bottom: 2px solid #e6bd43;
+  padding: 10px;
+  text-align: center;
+}
+
 .port_article_controller {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+.port_article_controller h3 {
+  width: 100%;
 }
 .port_article_controller article {
   display: flex;
@@ -171,7 +205,7 @@ header nav ol li #selected_page {
   max-width: 692px;
   min-width: 200px;
   flex-grow: 1;
-  margin: 10px;
+  margin: 10px 0;
   border: 1px solid red;
 }
 .port_article_controller article img {
@@ -326,6 +360,9 @@ footer ul li a {
   }
   #home_main #services article {
     width: 25%;
+  }
+  .port_article_controller article {
+    margin: 10px;
   }
   aside form {
     justify-content: center;
