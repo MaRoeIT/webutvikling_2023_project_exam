@@ -341,6 +341,7 @@ footer{
     a{
         align-self: center;
         margin: 10px;
+        font-size: 2rem;
         img{
             width: 120px;
             height: 120px;
@@ -370,11 +371,6 @@ footer{
             }
         }
     }
-}
-
-.yellow_hover_btn:hover{
-    background-color: $black_color;
-    color: $yellow_color;
 }
 
 .yellow_hover_btn{
@@ -537,5 +533,10 @@ footer{
                 margin: 5px;
             }
         }
+    }
+
+    .yellow_hover_btn:hover{
+        background-color: $black_color;
+        color: $yellow_color;
     }
 }

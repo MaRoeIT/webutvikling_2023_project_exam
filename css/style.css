@@ -326,6 +326,7 @@ footer {
 footer a {
   align-self: center;
   margin: 10px;
+  font-size: 2rem;
 }
 footer a img {
   width: 120px;
@@ -353,11 +354,6 @@ footer ul li a {
   font-weight: 800;
   padding: 10px;
   font-family: "Open Sans", sans-serif;
-}
-
-.yellow_hover_btn:hover {
-  background-color: #000;
-  color: #e6bd43;
 }
 
 .yellow_hover_btn {
@@ -501,5 +497,9 @@ footer ul li a {
   }
   footer ul li {
     margin: 5px;
+  }
+  .yellow_hover_btn:hover {
+    background-color: #000;
+    color: #e6bd43;
   }
 }/*# sourceMappingURL=style.css.map */
