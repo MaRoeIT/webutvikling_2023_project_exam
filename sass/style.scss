@@ -7,12 +7,6 @@
 
 main{
     font-family: 'Open Sans', sans-serif;
-    section{
-        border: 1px solid black;
-        article{
-            border: 1px solid red;
-        }
-    }
 }
 
 #home_main{
@@ -20,7 +14,6 @@ main{
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     section{
-        border: 1px solid black;
         display: flex;
         justify-items: center;
         justify-content: space-around;
@@ -35,7 +28,6 @@ main{
             text-align: center;
         }
         article{
-            border: 1px solid red;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -61,9 +53,116 @@ main{
     }
 }
 
+#main_about{
+    #about_company{
+        background-image: url(../img/mobile_on_notebook.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 40px;
+        article{
+            background-color: $opacity_light_grey;
+            padding: 35px;
+            a{
+                padding: 10px;
+                text-decoration: none;
+            }
+        }
+    }
+    #services{
+        display: flex;
+        justify-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        h2{
+            text-align: center;
+        }
+        p{
+            text-align: center;
+        }
+        article{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 30px;
+            i{
+                font-size: 2rem;
+            }
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        a{
+            border: 3px solid $black_color;
+            padding: 15px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+    }
+    #clients{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        background-color: $yellow_color;
+        h2{
+            width: 100%;
+            text-align: center;
+        }
+        img{
+            margin: 10px;
+        }
+    }
+    #contact_form{
+        display: grid;
+        grid-template-areas: "heading" "message_form" "contact_info" "map";
+        background-color: $light_gray_color;
+        h2{
+            text-align: center;
+            grid-area: heading;
+        }
+        #message_form{
+            grid-area: message_form;
+        }
+        #contact_info{
+            grid-area: contact_info;
+        }
+        article{
+            padding: 20px;
+            form{
+                display: flex;
+                flex-direction: column;
+                input, textarea{
+                    border: none;
+                    margin: 10px 0;
+                    padding: 10px 5px;
+                }
+                input[type=submit]{
+                    width: 140px;
+                }
+            }
+            ul{
+                list-style: none;
+                padding: 0;
+                li{
+                    i{
+                        margin-right: 20px;
+                        color: $black_color;
+                    }
+                }
+            }
+        }
+        div{
+            grid-area: map;
+        }
+    }
+}
+
 aside{
     background-color: $light_gray_color;
-    border: 1px solid violet;
     padding: 40px 15px;
     form{
         display: flex;
@@ -92,12 +191,8 @@ aside{
     }
 }
 
-footer{
-    border: 1px solid green;
-}
 
 header{
-    border: 1px solid blue;
     nav{
         display: flex;
         flex-direction: column;
@@ -217,8 +312,6 @@ header{
         img{
             object-fit: contain;
         }
-        // Note to self, its here to show the article boxes. remove after use
-        border: 1px solid red;
     }
 }
 
@@ -378,9 +471,41 @@ footer{
         }    
     }
 
+    #main_about{
+        #about_company{
+            article{
+                /* I haven't used flex og grid her to place this article box, both to show that i know how to do it in other ways than with only flex and grid
+                and that it's just moving one item in this section so it would be overkill to make a grid for it or use flex just to get acess to justify-content */
+                width: 40%;
+                margin-left: auto;
+            }
+        }
+        #services{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            h2{
+                width: 100%;
+            }
+            article{
+                width: 25%;
+            }
+        }
+        #contact_form{
+            grid-template-areas: ". heading heading ." "message_form message_form contact_info contact_info" "map map map map";
+            grid-template-columns: repeat(4, 1fr);
+        }    
+    }
+
+
     .port_article_controller{
         article{
             margin: 10px;
+            transform: scale(100%);
+            transition: transform 1s ease;
+        }
+        article:hover{
+            transform: scale(105%);
         }
     }
 

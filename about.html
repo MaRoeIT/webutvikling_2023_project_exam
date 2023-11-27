@@ -8,6 +8,8 @@
         
         <!-- Helps by removing some of the inbuilt css and removes some common inconsistencies between different browsers https://github.com/necolas/normalize.css/ -->
         <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" type="text/css">
+        <link rel="stylesheet" href="icons/fontawsome_icons/css/all.min.css">
+        <link rel="stylesheet" href="icons/fontawsome_icons/css/all.css">
         <link rel="stylesheet" href="css/style.css" type="text/css">
 
         <title>Who are we at Bytebounce</title>
@@ -29,14 +31,13 @@
                         <a href="about.html" id="selected_page">About</a>
                     </li>
                     <li>
-                        <a href="about.html#contact_form" id="contact_button">Contact</a>
+                        <a href="about.html#contact_form" class="yellow_hover_btn">Contact</a>
                     </li>
                 </ol>  
             </nav>
         </header>
-        <main>
-            <section>
-                <img src="img/mobile_on_notebook.webp" alt="">
+        <main id="main_about">
+            <section id="about_company">
                 <article>
                     <span>Bytebounce</span>
                     <h1>About Our Company</h1>
@@ -46,29 +47,33 @@
                         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
                         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.    
                     </p>
-                    <a href="#contact">Get in touch with us</a>
+                    <a href="#contact" class="yellow_hover_btn">Get in touch with us</a>
                 </article>
             </section>
-            <section>
-                <h2>Our Services</h2>
+            <section id="services">
+                <h2>Our services</h2>
                 <article>
+                    <i class="fa-solid fa-users"></i>
                     <h3>Branding</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 </article>
                 <article>
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
                     <h3>Design</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 </article>
                 <article>
+                    <i class="fa-solid fa-code"></i>
                     <h3>Development</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 </article>
                 <article>
+                    <i class="fa-solid fa-wifi"></i>
                     <h3>Support</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 </article>
             </section>
-            <section>
+            <section id="clients">
                 <h2>Some of our clients</h2>
                 <img src="img/logo1.png" alt="">
                 <img src="img/logo2.png" alt="">
@@ -76,19 +81,19 @@
             </section>
             <section id="contact_form">
                 <h2>Contact us</h2>
-                <article>
+                <article id="message_form">
                     <h3>Send us a message</h3>
                     <form action="#">
                         <label for="contact_name">Name</label>
-                        <input type="text" name="contact_name" placeholder="Kyle Westfork.." required>
+                        <input type="text" id="contact_name" name="contact_name" placeholder="Kyle Westfork.." required>
                         <label for="contact_subject">Subject</label>
-                        <input type="text" name="contact_subject" placeholder="Branding..">
+                        <input type="text" id="contact_subject" name="contact_subject" placeholder="Branding..">
                         <label for="contact_message">Message</label>
-                        <input type="text" name="contact_message" placeholder="write what you want to say to us..">
-                        <input type="submit" value="Send message">
+                        <textarea name="contact_message" id="contact_message" cols="30" rows="10" placeholder="write what you want to say to us.."></textarea>
+                        <input type="submit" value="Send message" class="yellow_hover_btn">
                     </form>
                 </article>
-                <article>
+                <article id="contact_info">
                     <h3>Contact Information</h3>
                     <p>
                         Massa eget egestas purus viverra accumsan in nisl. 
@@ -98,16 +103,14 @@
                     
                     <ul>
                         <li>
-                            <!-- Note to self maps icon here -->
-                            <p>B R A Veien 4, 1757 Halden</p>
+                            <p><i class="fa-solid fa-location-dot"></i>B R A Veien 4, 1757 Halden</p>
                         </li>
                         <li>
-                            <!-- Note to self telephone icon here -->
-                            <p>69 60 80 00</p>
+                            <p><i class="fa-solid fa-phone"></i>69 60 80 00</p>
                         </li>
                         <li>
-                            <!-- Note to self mail icon here -->
-                            <a href="mailto:postmottak@hiof.no">postmottak@hiof.no</a>
+                            
+                            <a href="mailto:postmottak@hiof.no"><i class="fa-solid fa-envelope"></i>postmottak@hiof.no</a>
                         </li>
                     </ul>
                 </article>
