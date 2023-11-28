@@ -11,3 +11,11 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+@mixin max_size_properties{
+    max-width: 1600px;
+    /* I am not using the shorthand margin here since this will be used on taggs that may have a margin on the vertical axis.
+    normaly changes that are in the sass file will have priority over partials but i do this to make sure there will be no issues */
+    margin-left: auto;
+    margin-right: auto;
+}

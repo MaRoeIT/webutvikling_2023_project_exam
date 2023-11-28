@@ -12,8 +12,8 @@ main{
 
 #home_main{
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
+    grid-template-areas: "headline" "subheading" "about_company" "our_services";
+    @include max_size_properties;
     section{
         display: flex;
         justify-items: center;
@@ -49,17 +49,31 @@ main{
             font-weight: 700;
         }
     }
+    #home_headline{
+        grid-area: headline;
+    }
+    #subheading{
+        grid-area: subheading;
+    }
     #home_about{
         background-color: $yellow_color;
+        grid-area: about_company;
+    }
+    #services{
+        grid-area: our_services;
     }
 }
 
 #main_about{
+    display: grid;
+    grid-template-areas: "about_company" "services" "clients" "contact_form";
+    @include max_size_properties;
     #about_company{
         padding: 40px;
         background: url(../img/mobile_on_notebook.webp) $light_gray_color;
         background-repeat: no-repeat;
         background-size: cover;
+        grid-area: about_company;
         article{
             background-color: $opacity_light_grey;
             padding: 35px;
@@ -77,6 +91,7 @@ main{
         justify-content: center;
         align-items: center;
         padding: 40px;
+        grid-area: services;
         h2{
             text-align: center;
         }
@@ -107,8 +122,10 @@ main{
     #clients{
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-evenly;
+        justify-content: center;
+        gap: 20px;
         background-color: $yellow_color;
+        grid-area: clients;
         h2{
             width: 100%;
             text-align: center;
@@ -121,6 +138,7 @@ main{
         display: grid;
         grid-template-areas: "heading" "message_form" "contact_info" "map";
         background-color: $light_gray_color;
+        grid-area: contact_form;
         h2{
             text-align: center;
             grid-area: heading;
@@ -165,6 +183,7 @@ main{
 aside{
     background-color: $light_gray_color;
     padding: 40px 15px;
+    @include max_size_properties;
     form{
         display: flex;
         flex-direction: row;
@@ -198,6 +217,7 @@ header{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        @include max_size_properties;
         a{
             align-self: center;
             margin: 10px;
@@ -265,6 +285,27 @@ header{
 }
 
 #portifolio_main{
+    @include max_size_properties;
+    #previous_jobs{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, auto);
+        h2{
+            grid-row: 1/2;
+        }
+        nav{
+            grid-row: 2/3;
+        }
+        #branding{
+            grid-row: 3/4;
+        }
+        #design{
+            grid-row: 4/5;
+        }
+        #development{
+            grid-row: 5/6;
+        }
+    }
     section{
         padding: 40px;
         h2{
@@ -343,43 +384,47 @@ header{
 }
 
 footer{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     background-color: $black_color;
-    a{
-        align-self: center;
-        margin: 10px;
-        font-size: 2rem;
-        img{
-            width: 120px;
-            height: 120px;
-        }        
-    }
-    
-    p{
-        color: $white_color;
-        align-self: center;
-    }
-    ul{
+    div{
         display: flex;
-        flex-wrap: wrap;
         flex-direction: column;
-        align-items: center;
-        margin: 10px;
-        padding: 0;
-        li{
-            list-style: none;
+        justify-content: space-between;
+        @include max_size_properties;
+        a{
+            align-self: center;
             margin: 10px;
-            a{
-                text-decoration: none;
-                color: $white_color;
-                font-weight: 800;
-                padding: 10px;
-                font-family: 'Open Sans', sans-serif;
+            font-size: 2rem;
+            img{
+                width: 120px;
+                height: 120px;
+            }        
+        }
+        
+        p{
+            color: $white_color;
+            align-self: center;
+        }
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+            padding: 0;
+            li{
+                list-style: none;
+                margin: 10px;
+                a{
+                    text-decoration: none;
+                    color: $white_color;
+                    font-weight: 800;
+                    padding: 10px;
+                    font-family: 'Open Sans', sans-serif;
+                }
             }
         }
     }
+    
 }
 
 .yellow_hover_btn{
@@ -407,6 +452,7 @@ footer{
         }
     }
     #home_main{
+        grid-template-areas: "headline headline headline" ". subheading ." "about_company about_company about_company" "our_services our_services our_services";
         #home_headline{
             position: relative;
             height: 500px;
@@ -418,6 +464,7 @@ footer{
                 width: 100%;
                 height: 100%;
                 position: absolute;
+                opacity: 0.6;
             }
             h1{
                 z-index: 1;
@@ -433,6 +480,9 @@ footer{
                 z-index: 1;
                 position: relative;
             }
+        }
+        #home_headline:before{
+            display: none;
         }
         #home_about{
             display: grid;
@@ -474,18 +524,41 @@ footer{
                 width: 100%;
             }
             article{
-                width: 25%;
+                max-width: 300px;
             }
 
         }    
     }
 
+    #portifolio_main{
+        #previous_jobs{
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            h2{
+                grid-column: 1/4;
+            }
+            nav{
+                grid-column: 1/4;
+            }
+            #branding{
+                grid-column: 1/4;
+            }
+            #design{
+                grid-column: 1/4;
+            }
+            #development{
+                grid-column: 1/4;
+            }
+        }
+    }
+
     #main_about{
+        grid-template-areas: "about_company about_company about_company" "services services services" "clients clients clients" "contact_form contact_form contact_form";
         #about_company{
             article{
                 /* I haven't used flex og grid her to place this article box, both to show that i know how to do it in other ways than with only flex and grid
                 and that it's just moving one item in this section so it would be overkill to make a grid for it or use flex just to get acess to justify-content */
-                width: 50%;
+                width: 40%;
                 margin-left: auto;
                 min-width: 400px;
             }
@@ -498,7 +571,7 @@ footer{
                 width: 100%;
             }
             article{
-                width: 25%;
+                max-width: 300px;
             }
         }
         #contact_form{
@@ -537,16 +610,19 @@ footer{
     
 
     footer{
-        flex-wrap: wrap;
-        flex-direction: row;
-        ul{
+        div{
+            flex-wrap: wrap;
             flex-direction: row;
-            justify-content: flex-end;
-            margin: 0 10px;
-            li{
-                margin: 5px;
-            }
+            ul{
+                flex-direction: row;
+                justify-content: flex-end;
+                margin: 0 10px;
+                li{
+                    margin: 5px;
+                }
+            }  
         }
+        
     }
 
     .yellow_hover_btn:hover, .category_hover_btn:hover{
