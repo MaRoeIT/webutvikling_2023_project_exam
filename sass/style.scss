@@ -1,4 +1,5 @@
 @import "partials/colors";
+@import "partials/mixins";
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700&display=swap');
 
 *{
@@ -55,10 +56,10 @@ main{
 
 #main_about{
     #about_company{
-        background-image: url(../img/mobile_on_notebook.webp);
+        padding: 40px;
+        background: url(../img/mobile_on_notebook.webp) $light_gray_color;
         background-repeat: no-repeat;
         background-size: cover;
-        padding: 40px;
         article{
             background-color: $opacity_light_grey;
             padding: 35px;
@@ -232,30 +233,34 @@ header{
 
 #home_main{
     #home_headline{
+        position: relative;
         height: 500px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-image: url(../img/mobile_on_notebook.webp);
-        background-repeat: no-repeat;
-        background-size: cover;
         video{
             display: none;
         }
         h1{
+            position: relative;
             text-align: center;
             width: 70%;
         }
         p{
+            position: relative;
             text-align: center;
             width: 70%;
         }
         a{
+            position: relative;
             border: none;
             padding: 10px;
             text-decoration: none;
         }
+    }
+    #home_headline:before{
+        @include opacity_background_image;
     }    
 }
 
@@ -315,16 +320,21 @@ header{
 }
 
 #portifolio_background{
-    background-image: url("../img/mobile_on_notebook.webp");
+    position: relative;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     height: 250px;
     h1{
+        position: relative;
         color: $black_color;
         text-align: center;
         margin: 100px 0;
     }
+}
+
+#portifolio_background:before{
+    @include opacity_background_image;
 }
 
 #map{
@@ -475,7 +485,7 @@ footer{
             article{
                 /* I haven't used flex og grid her to place this article box, both to show that i know how to do it in other ways than with only flex and grid
                 and that it's just moving one item in this section so it would be overkill to make a grid for it or use flex just to get acess to justify-content */
-                width: 40%;
+                width: 50%;
                 margin-left: auto;
             }
         }

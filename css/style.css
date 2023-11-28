@@ -52,10 +52,10 @@ main {
 }
 
 #main_about #about_company {
-  background-image: url(../img/mobile_on_notebook.webp);
+  padding: 40px;
+  background: url(../img/mobile_on_notebook.webp) #dddddd;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 40px;
 }
 #main_about #about_company article {
   background-color: rgba(221, 221, 221, 0.8705882353);
@@ -222,30 +222,44 @@ header nav ol li #selected_page {
 }
 
 #home_main #home_headline {
+  position: relative;
   height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url(../img/mobile_on_notebook.webp);
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 #home_main #home_headline video {
   display: none;
 }
 #home_main #home_headline h1 {
+  position: relative;
   text-align: center;
   width: 70%;
 }
 #home_main #home_headline p {
+  position: relative;
   text-align: center;
   width: 70%;
 }
 #home_main #home_headline a {
+  position: relative;
   border: none;
   padding: 10px;
   text-decoration: none;
+}
+#home_main #home_headline:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  background: url(../img/mobile_on_notebook.webp) #dddddd;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #portifolio_main section {
@@ -297,16 +311,31 @@ header nav ol li #selected_page {
 }
 
 #portifolio_background {
-  background-image: url("../img/mobile_on_notebook.webp");
+  position: relative;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 250px;
 }
 #portifolio_background h1 {
+  position: relative;
   color: #000;
   text-align: center;
   margin: 100px 0;
+}
+
+#portifolio_background:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  background: url(../img/mobile_on_notebook.webp) #dddddd;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #map {
@@ -448,7 +477,7 @@ footer ul li a {
   #main_about #about_company article {
     /* I haven't used flex og grid her to place this article box, both to show that i know how to do it in other ways than with only flex and grid
     and that it's just moving one item in this section so it would be overkill to make a grid for it or use flex just to get acess to justify-content */
-    width: 40%;
+    width: 50%;
     margin-left: auto;
   }
   #main_about #services {
