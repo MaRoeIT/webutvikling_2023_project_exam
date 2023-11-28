@@ -4,7 +4,21 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Marius Rørmark">
-        <meta name="description" content="Description for this project. containing som relevant information on what the index page is about">
+        <meta name="description" content="Bytebounce is a IT service company made in 1997. write more about bytbounce and who bytbounce is and what this part of the site is about">
+        <!-- Keywords isn't that relevant annymore for SEO since google doesn't use it -->
+        <meta name="keywords" content="IT, Services, Branding, Design, Development, Support, About">
+
+        <!-- Open Graph meta tags, the content that requires the website to be online is filled with some dummy content -->
+        <meta property="og:url" content="https://bytebounce.com/about.html">
+        <meta property="og:title" content="Who are we at Bytbounce">
+        <meta property="og:description" content="Information about what bytbounce does and written for the type of audience we espect from facebook">
+        <meta property="og:image" content="https://bytebounce.com/img/logo1.png">
+        <meta property="og:image:width" content="120px">
+        <meta property="og:image:height" content="120px">
+        <meta property="og:locale" content="en_EN">
+        <meta property="og:type" content="website">
+        <!-- This is my facebook app id i think it is also conected to my Oblig 4 website -->
+        <meta property="fb:app_id" content="229673666800513">
         
         <!-- Helps by removing some of the inbuilt css and removes some common inconsistencies between different browsers https://github.com/necolas/normalize.css/ -->
         <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" type="text/css">
@@ -36,7 +50,9 @@
                 </ol>  
             </nav>
         </header>
-        <main id="main_about">
+        <main id="main_about" itemscope itemtype="https://schema.org/Corporation">
+            <!-- I have used a placholder link to where the logo image would potentially lie -->
+            <meta itemprop="logo" content="https://bytbounce.com/img/logo1.png">
             <section id="about_company">
                 <article>
                     <!-- Changed the order of these html elements since for screen readers it isn't clear what bytebounce is, 
@@ -44,8 +60,8 @@
                         I used css to style them so they are in the right order visually compared to the video -->
                     <!-- I could put a aria-label on bytbounce since it is a span, aria atributes won't be read from a span -->
                     <h1>About Our Company</h1>
-                    <span>Bytebounce</span>
-                    <p>
+                    <span itemprop="legalName">Bytebounce</span>
+                    <p itemprop="description">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
                         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
@@ -54,30 +70,30 @@
                     <a href="#contact" class="yellow_hover_btn">Get in touch with us</a>
                 </article>
             </section>
-            <section id="services">
+            <section id="services" itemscope itemtype="https://schema.org/Service">
                 <h2>Our services</h2>
                 <!-- I haven't added aria labels to the font awsome icons here because they are just for style and not content in them selves.
                 the heading and paragraph is the content. -->
                 <!-- I am hiding the icons since they give no content for screen readers. -->
                 <article>
                     <i class="fa-solid fa-users" aria-hidden="true"></i>
-                    <h3>Branding</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    <h3 itemprop="category">Branding</h3>
+                    <p itemprop="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 </article>
                 <article>
                     <i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>
-                    <h3>Design</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    <h3 itemprop="category">Design</h3>
+                    <p itemprop="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 </article>
                 <article>
                     <i class="fa-solid fa-code" aria-hidden="true"></i>
-                    <h3>Development</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    <h3 itemprop="category">Development</h3>
+                    <p itemprop="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 </article>
                 <article>
                     <i class="fa-solid fa-wifi" aria-hidden="true"></i>
-                    <h3>Support</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    <h3 itemprop="category">Support</h3>
+                    <p itemprop="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 </article>
             </section>
             <section id="clients">
@@ -111,26 +127,35 @@
                         Pulvinar etiam non quam lacus suspendisse
                     </p>
                     
-                    <ul>
-                        <li>
-                            <p><i class="fa-solid fa-location-dot"></i>B R A Veien 4, 1757 Halden</p>
+                    <ul itemscope itemtype="https://schema.org/ContactPoint">
+                        <li itemscope itemtype="https://schema.org/AdministrativeArea">
+                            <p itemprop="address"><i class="fa-solid fa-location-dot"></i>B R A Veien 4, 1757 Halden</p>
+                            <!-- Geo location gives google the precise location, i am using the same latitud and longitude as in the google maps on this site -->
+                            <div itemprop="geo" itemscope itemtype="https://schema.org/GeoCoordinates">
+                                <meta itemprop="longitude" content="11.3528813">
+                                <meta itemprop="latitude" content="59.1289181">
+                            </div>
                         </li>
                         <li>
-                            <p><i class="fa-solid fa-phone"></i>69 60 80 00</p>
+                            <meta itemprop="contactType" content="sales department">
+                            <meta itemprop="availableLanguage" content="en, no">
+                            <p itemprop="telephone"><i class="fa-solid fa-phone"></i>69 60 80 00</p>
                         </li>
                         <li>
                             
-                            <a href="mailto:postmottak@hiof.no"><i class="fa-solid fa-envelope"></i>postmottak@hiof.no</a>
+                            <a href="mailto:postmottak@hiof.no" itemprop="email"><i class="fa-solid fa-envelope"></i>postmottak@hiof.no</a>
                         </li>
                     </ul>
                 </article>
                 <!-- I have the map as a div since it doesn't fit in with eather article or section, and it is not content that is aside of the above.
                 I see it as a visual representation of the content in the first list element above, the adress -->
                 <div id="map"></div>
+                <!-- This is part of the javascript code i don't understand -->
                 <script>
                     (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
                     ({key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg", v: "weekly"});
                 </script>
+                <!-- The JavaScript code that sets where the map should be centered around, and putting a marker on the school -->
                 <script src="./scripts/maps.js"></script>
             </section>
         </main>
