@@ -273,12 +273,11 @@ header{
                 padding: 0;
                 list-style: none;
                 li{
-                    margin: 5px;
-                    padding: 5px;
-                    border: 1px solid $black_color;
                     a{
+                        margin: 5px;
+                        border: 1px solid $black_color;
+                        padding: 5px;
                         text-decoration: none;
-                        color: $black_color;
                     }
                 }
             }
@@ -375,6 +374,10 @@ footer{
 
 .yellow_hover_btn{
     background-color: $yellow_color;
+    color: $black_color;
+}
+
+.category_hover_btn{
     color: $black_color;
 }
 
@@ -535,8 +538,9 @@ footer{
         }
     }
 
-    .yellow_hover_btn:hover{
+    .yellow_hover_btn:hover, .category_hover_btn:hover{
         background-color: $black_color;
         color: $yellow_color;
     }
+
 }

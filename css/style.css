@@ -261,14 +261,11 @@ header nav ol li #selected_page {
   padding: 0;
   list-style: none;
 }
-#portifolio_main section nav ul li {
-  margin: 5px;
-  padding: 5px;
-  border: 1px solid #000;
-}
 #portifolio_main section nav ul li a {
+  margin: 5px;
+  border: 1px solid #000;
+  padding: 5px;
   text-decoration: none;
-  color: #000;
 }
 #portifolio_main section section {
   padding: 0;
@@ -358,6 +355,10 @@ footer ul li a {
 
 .yellow_hover_btn {
   background-color: #e6bd43;
+  color: #000;
+}
+
+.category_hover_btn {
   color: #000;
 }
 
@@ -498,7 +499,7 @@ footer ul li a {
   footer ul li {
     margin: 5px;
   }
-  .yellow_hover_btn:hover {
+  .yellow_hover_btn:hover, .category_hover_btn:hover {
     background-color: #000;
     color: #e6bd43;
   }
