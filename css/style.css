@@ -315,13 +315,13 @@ header nav ol li #selected_page {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 250px;
+  height: 300px;
 }
 #portifolio_background h1 {
   position: relative;
   color: #000;
   text-align: center;
-  margin: 100px 0;
+  top: 2em;
 }
 
 #portifolio_background:before {
@@ -479,6 +479,7 @@ footer ul li a {
     and that it's just moving one item in this section so it would be overkill to make a grid for it or use flex just to get acess to justify-content */
     width: 50%;
     margin-left: auto;
+    min-width: 400px;
   }
   #main_about #services {
     display: flex;

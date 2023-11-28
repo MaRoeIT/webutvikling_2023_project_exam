@@ -324,12 +324,12 @@ header{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 250px;
+    height: 300px;
     h1{
         position: relative;
         color: $black_color;
         text-align: center;
-        margin: 100px 0;
+        top: 2em;
     }
 }
 
@@ -487,6 +487,7 @@ footer{
                 and that it's just moving one item in this section so it would be overkill to make a grid for it or use flex just to get acess to justify-content */
                 width: 50%;
                 margin-left: auto;
+                min-width: 400px;
             }
         }
         #services{
