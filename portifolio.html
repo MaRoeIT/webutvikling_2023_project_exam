@@ -45,14 +45,15 @@
                 <h2>Explore previous jobs</h2>
                 <nav>
                     <ul>
+                        <!-- Added Aria-label to give the user a bit more information on where the link takes the user. the heading above with the Aria-label makes it more clear. -->
                         <li>
-                            <a href="#branding" class="category_hover_btn">Branding</a>
+                            <a href="#branding" class="category_hover_btn" aria-label="Click to go to branding section">Branding</a>
                         </li>
                         <li>
-                            <a href="#design" class="category_hover_btn">Design</a> 
+                            <a href="#design" class="category_hover_btn" aria-label="Click to go to design section">Design</a> 
                         </li>
                         <li>
-                            <a href="#development" class="category_hover_btn">Development</a>
+                            <a href="#development" class="category_hover_btn" aria-label="Click to go to development section">Development</a>
                         </li>
                     </ul>
                 </nav>
@@ -112,15 +113,17 @@
                     <img src="img/logo1.png" alt="The logo of the company. Take you to the front page">
                 </a>
                 <p>Companyrights Bytebounce 2023</p>
+                <!-- Added Aria-labels to these icons with links. this is so the screen reader can tell the user what these icons are, 
+                    especially since font awsome icons are i taggs witch gives the screen reader zero information -->
                 <ul>
                     <li>
-                        <a href="https://www.facebook.com/"><i class="fa-brands fa-square-facebook"></i></a>
+                        <a href="https://www.facebook.com/" aria-label="Link to Bytebounce facebook site"><i class="fa-brands fa-square-facebook"></i></a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/"><i class="fa-brands fa-square-instagram"></i></a>
+                        <a href="https://www.instagram.com/" aria-label="Link to Bytebounce instagram site"><i class="fa-brands fa-square-instagram"></i></a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/" aria-label="Link to Bytebounce facebook site"><i class="fa-brands fa-linkedin"></i></a>
                     </li>
                 </ul>
             </div>

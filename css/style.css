@@ -82,12 +82,25 @@ main {
   grid-area: about_company;
 }
 #main_about #about_company article {
+  display: flex;
+  flex-direction: column;
   background-color: rgba(221, 221, 221, 0.8705882353);
   padding: 35px;
 }
+#main_about #about_company article h1 {
+  order: 2;
+}
+#main_about #about_company article span {
+  order: 1;
+}
+#main_about #about_company article p {
+  order: 3;
+}
 #main_about #about_company article a {
+  order: 4;
   padding: 10px;
   text-decoration: none;
+  max-width: 180px;
 }
 #main_about #services {
   display: flex;

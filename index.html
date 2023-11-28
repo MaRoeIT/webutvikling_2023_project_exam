@@ -66,23 +66,26 @@
             </section>
             <section id="services">
                 <h2>Our services</h2>
+                <!-- I haven't added aria labels to the font awsome icons here because they are just for style and not content in them selves.
+                the heading and paragraph is the content. -->
+                <!-- I am hiding the icons since they give no content for screen readers. -->
                 <article>
-                    <i class="fa-solid fa-users"></i>
+                    <i class="fa-solid fa-users" aria-hidden="true"></i>
                     <h3>Branding</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 </article>
                 <article>
-                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>
                     <h3>Design</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 </article>
                 <article>
-                    <i class="fa-solid fa-code"></i>
+                    <i class="fa-solid fa-code" aria-hidden="true"></i>
                     <h3>Development</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 </article>
                 <article>
-                    <i class="fa-solid fa-wifi"></i>
+                    <i class="fa-solid fa-wifi" aria-hidden="true"></i>
                     <h3>Support</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 </article>
@@ -91,9 +94,10 @@
         <aside>
             <!-- The form action tells the form what it should do when clicked, normaly it will go to a script that handles what will happen when clicked -->
             <form action="#">
+                <!-- Added Aria-labels on both inputs, when listening to screen reader it wasn't clear by the forms label what the email input was and the submit button -->
                 <label for="newsletter_email">Sign up for our newsletter</label>
-                <input type="email" id="newsletter_email" name="newsletter_email" placeholder="kyle@email.com" required>
-                <input type="submit" value="Sign me up" class="yellow_hover_btn">
+                <input type="email" id="newsletter_email" name="newsletter_email" placeholder="kyle@email.com" aria-label="write your email here" required>
+                <input type="submit" value="Sign me up" class="yellow_hover_btn" aria-label="click to sign up for newsletter">
             </form>
         </aside>
         <footer>
@@ -103,15 +107,17 @@
                     <img src="img/logo1.png" alt="The logo of the company. Take you to the front page">
                 </a>
                 <p>Companyrights Bytebounce 2023</p>
+                <!-- Added Aria-labels to these icons with links. this is so the screen reader can tell the user what these icons are, 
+                    especially since font awsome icons are i taggs witch gives the screen reader zero information -->
                 <ul>
                     <li>
-                        <a href="https://www.facebook.com/"><i class="fa-brands fa-square-facebook"></i></a>
+                        <a href="https://www.facebook.com/" aria-label="Link to Bytebounce facebook site"><i class="fa-brands fa-square-facebook"></i></a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/"><i class="fa-brands fa-square-instagram"></i></a>
+                        <a href="https://www.instagram.com/" aria-label="Link to Bytebounce instagram site"><i class="fa-brands fa-square-instagram"></i></a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/" aria-label="Link to Bytebounce facebook site"><i class="fa-brands fa-linkedin"></i></a>
                     </li>
                 </ul>
             </div>

@@ -39,8 +39,12 @@
         <main id="main_about">
             <section id="about_company">
                 <article>
-                    <span>Bytebounce</span>
+                    <!-- Changed the order of these html elements since for screen readers it isn't clear what bytebounce is, 
+                        but after the heading the it's more clear that bytebounce is the company. 
+                        I used css to style them so they are in the right order visually compared to the video -->
+                    <!-- I could put a aria-label on bytbounce since it is a span, aria atributes won't be read from a span -->
                     <h1>About Our Company</h1>
+                    <span>Bytebounce</span>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
@@ -52,23 +56,26 @@
             </section>
             <section id="services">
                 <h2>Our services</h2>
+                <!-- I haven't added aria labels to the font awsome icons here because they are just for style and not content in them selves.
+                the heading and paragraph is the content. -->
+                <!-- I am hiding the icons since they give no content for screen readers. -->
                 <article>
-                    <i class="fa-solid fa-users"></i>
+                    <i class="fa-solid fa-users" aria-hidden="true"></i>
                     <h3>Branding</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 </article>
                 <article>
-                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>
                     <h3>Design</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 </article>
                 <article>
-                    <i class="fa-solid fa-code"></i>
+                    <i class="fa-solid fa-code" aria-hidden="true"></i>
                     <h3>Development</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 </article>
                 <article>
-                    <i class="fa-solid fa-wifi"></i>
+                    <i class="fa-solid fa-wifi" aria-hidden="true"></i>
                     <h3>Support</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 </article>
@@ -134,15 +141,17 @@
                     <img src="img/logo1.png" alt="The logo of the company. Take you to the front page">
                 </a>
                 <p>Companyrights Bytebounce 2023</p>
+                <!-- Added Aria-labels to these icons with links. this is so the screen reader can tell the user what these icons are, 
+                    especially since font awsome icons are i taggs witch gives the screen reader zero information -->
                 <ul>
                     <li>
-                        <a href="https://www.facebook.com/"><i class="fa-brands fa-square-facebook"></i></a>
+                        <a href="https://www.facebook.com/" aria-label="Link to Bytebounce facebook site"><i class="fa-brands fa-square-facebook"></i></a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/"><i class="fa-brands fa-square-instagram"></i></a>
+                        <a href="https://www.instagram.com/" aria-label="Link to Bytebounce instagram site"><i class="fa-brands fa-square-instagram"></i></a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/" aria-label="Link to Bytebounce facebook site"><i class="fa-brands fa-linkedin"></i></a>
                     </li>
                 </ul>
             </div>
