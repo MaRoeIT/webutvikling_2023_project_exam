@@ -3,10 +3,142 @@
   box-sizing: border-box;
 }
 
+/* General tags */
+header nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 1600px;
+  /* I am not using the shorthand margin here since this will be used on taggs that may have a margin on the vertical axis.
+  normaly changes that are in the sass file will have priority over partials but i do this to make sure there will be no issues */
+  margin-left: auto;
+  margin-right: auto;
+}
+header nav #skip_to_main {
+  position: absolute;
+  top: -100px;
+  left: auto;
+  overflow: hidden;
+}
+header nav #skip_to_main:focus {
+  position: fixed;
+  font-weight: 600;
+  padding: 10px 20px 15px 20px;
+  border-radius: 10%;
+  margin: 0;
+  top: -5px;
+  left: calc(50vw - 93.5px);
+  color: #000;
+  background-color: #e6bd43;
+  text-decoration: none;
+  z-index: 2;
+}
+header nav a {
+  align-self: center;
+  margin: 10px;
+}
+header nav a img {
+  width: 120px;
+  height: 120px;
+}
+header nav ol {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 0;
+}
+header nav ol li {
+  list-style: none;
+  margin: 10px;
+}
+header nav ol li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 800;
+  padding: 10px;
+  font-family: "Open Sans", sans-serif;
+}
+header nav ol li #selected_page {
+  text-decoration: underline solid #e6bd43 3px;
+}
+
 main {
   font-family: "Open Sans", sans-serif;
 }
 
+footer {
+  background-color: #000;
+  height: 200px;
+}
+footer div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 1600px;
+  /* I am not using the shorthand margin here since this will be used on taggs that may have a margin on the vertical axis.
+  normaly changes that are in the sass file will have priority over partials but i do this to make sure there will be no issues */
+  margin-left: auto;
+  margin-right: auto;
+}
+footer div a {
+  align-self: center;
+  margin: 10px;
+  font-size: 2rem;
+}
+footer div a img {
+  width: 120px;
+  height: 120px;
+}
+footer div p {
+  color: #fff;
+  align-self: center;
+}
+footer div ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 0;
+}
+footer div ul li {
+  list-style: none;
+  margin: 10px;
+}
+footer div ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 800;
+  padding: 10px;
+  font-family: "Open Sans", sans-serif;
+}
+
+#link_to_top {
+  position: fixed;
+  bottom: 40px;
+  right: 10px;
+}
+#link_to_top a {
+  font-size: 2rem;
+  background-color: #000;
+  padding: 15px;
+  color: #e6bd43;
+  border-radius: 10%;
+  border: 1px solid #e6bd43;
+}
+
+.yellow_hover_btn {
+  background-color: #e6bd43;
+  color: #000;
+}
+
+.category_hover_btn {
+  color: #000;
+}
+
+/* Index page spesific taggs */
 #home_main {
   display: grid;
   grid-template-areas: "headline" "subheading" "about_company" "our_services";
@@ -53,6 +185,44 @@ main {
 }
 #home_main #home_headline {
   grid-area: headline;
+  position: relative;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#home_main #home_headline video {
+  display: none;
+}
+#home_main #home_headline h1 {
+  position: relative;
+  text-align: center;
+  width: 70%;
+}
+#home_main #home_headline p {
+  position: relative;
+  text-align: center;
+  width: 70%;
+}
+#home_main #home_headline a {
+  position: relative;
+  border: none;
+  padding: 10px;
+  text-decoration: none;
+}
+#home_main #home_headline:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  background: url(../img/mobile_on_notebook.webp) #dddddd;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 #home_main #subheading {
   grid-area: subheading;
@@ -65,6 +235,146 @@ main {
   grid-area: our_services;
 }
 
+aside {
+  background-color: #dddddd;
+  padding: 40px 15px;
+  max-width: 1600px;
+  /* I am not using the shorthand margin here since this will be used on taggs that may have a margin on the vertical axis.
+  normaly changes that are in the sass file will have priority over partials but i do this to make sure there will be no issues */
+  margin-left: auto;
+  margin-right: auto;
+}
+aside form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+aside form label {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 20px;
+}
+aside form input {
+  padding: 10px;
+  border: none;
+}
+aside form input[type=email] {
+  width: 60%;
+  font-family: "Open Sans", sans-serif;
+}
+aside form input[type=submit] {
+  width: 37%;
+  font-weight: 700;
+  background-color: #e6bd43;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* portfolio spesific taggs */
+#portifolio_main {
+  max-width: 1600px;
+  /* I am not using the shorthand margin here since this will be used on taggs that may have a margin on the vertical axis.
+  normaly changes that are in the sass file will have priority over partials but i do this to make sure there will be no issues */
+  margin-left: auto;
+  margin-right: auto;
+}
+#portifolio_main #previous_jobs {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5, auto);
+}
+#portifolio_main #previous_jobs h2 {
+  grid-row: 1/2;
+}
+#portifolio_main #previous_jobs nav {
+  grid-row: 2/3;
+}
+#portifolio_main #previous_jobs #branding {
+  grid-row: 3/4;
+}
+#portifolio_main #previous_jobs #design {
+  grid-row: 4/5;
+}
+#portifolio_main #previous_jobs #development {
+  grid-row: 5/6;
+}
+#portifolio_main section {
+  padding: 40px;
+}
+#portifolio_main section h2 {
+  border-bottom: 2px solid #e6bd43;
+  padding: 10px;
+}
+#portifolio_main section nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style: none;
+}
+#portifolio_main section nav ul li a {
+  margin: 5px;
+  border: 1px solid #000;
+  padding: 5px;
+  text-decoration: none;
+}
+#portifolio_main section section {
+  padding: 0;
+}
+#portifolio_main section section h3 {
+  border-bottom: 2px solid #e6bd43;
+  padding: 10px;
+  text-align: center;
+}
+
+#portifolio_background {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+}
+#portifolio_background h1 {
+  position: relative;
+  color: #000;
+  text-align: center;
+  top: 2em;
+}
+
+#portifolio_background:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  background: url(../img/mobile_on_notebook.webp) #dddddd;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.port_article_controller {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.port_article_controller h3 {
+  width: 100%;
+}
+.port_article_controller article {
+  display: flex;
+  flex-direction: column;
+  max-width: 692px;
+  min-width: 200px;
+  flex-grow: 1;
+  margin: 10px 0;
+}
+.port_article_controller article img {
+  object-fit: contain;
+}
+
+/* about page spesific taggs */
 #main_about {
   display: grid;
   grid-template-areas: "about_company" "services" "clients" "contact_form";
@@ -196,287 +506,14 @@ main {
   grid-area: map;
 }
 
-aside {
-  background-color: #dddddd;
-  padding: 40px 15px;
-  max-width: 1600px;
-  /* I am not using the shorthand margin here since this will be used on taggs that may have a margin on the vertical axis.
-  normaly changes that are in the sass file will have priority over partials but i do this to make sure there will be no issues */
-  margin-left: auto;
-  margin-right: auto;
-}
-aside form {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-aside form label {
-  font-weight: 700;
-  font-size: 1.5rem;
-  margin: 20px;
-}
-aside form input {
-  padding: 10px;
-  border: none;
-}
-aside form input[type=email] {
-  width: 60%;
-  font-family: "Open Sans", sans-serif;
-}
-aside form input[type=submit] {
-  width: 37%;
-  font-weight: 700;
-  background-color: #e6bd43;
-  font-family: "Open Sans", sans-serif;
-}
-
-header nav {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  max-width: 1600px;
-  /* I am not using the shorthand margin here since this will be used on taggs that may have a margin on the vertical axis.
-  normaly changes that are in the sass file will have priority over partials but i do this to make sure there will be no issues */
-  margin-left: auto;
-  margin-right: auto;
-}
-header nav a {
-  align-self: center;
-  margin: 10px;
-}
-header nav a img {
-  width: 120px;
-  height: 120px;
-}
-header nav ol {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-  margin: 10px;
-  padding: 0;
-}
-header nav ol li {
-  list-style: none;
-  margin: 10px;
-}
-header nav ol li a {
-  text-decoration: none;
-  color: #000;
-  font-weight: 800;
-  padding: 10px;
-  font-family: "Open Sans", sans-serif;
-}
-header nav ol li #selected_page {
-  text-decoration: underline solid #e6bd43 3px;
-}
-
-#home_main #home_headline {
-  position: relative;
-  height: 500px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-#home_main #home_headline video {
-  display: none;
-}
-#home_main #home_headline h1 {
-  position: relative;
-  text-align: center;
-  width: 70%;
-}
-#home_main #home_headline p {
-  position: relative;
-  text-align: center;
-  width: 70%;
-}
-#home_main #home_headline a {
-  position: relative;
-  border: none;
-  padding: 10px;
-  text-decoration: none;
-}
-#home_main #home_headline:before {
-  content: " ";
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.4;
-  background: url(../img/mobile_on_notebook.webp) #dddddd;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-#portifolio_main {
-  max-width: 1600px;
-  /* I am not using the shorthand margin here since this will be used on taggs that may have a margin on the vertical axis.
-  normaly changes that are in the sass file will have priority over partials but i do this to make sure there will be no issues */
-  margin-left: auto;
-  margin-right: auto;
-}
-#portifolio_main #previous_jobs {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(5, auto);
-}
-#portifolio_main #previous_jobs h2 {
-  grid-row: 1/2;
-}
-#portifolio_main #previous_jobs nav {
-  grid-row: 2/3;
-}
-#portifolio_main #previous_jobs #branding {
-  grid-row: 3/4;
-}
-#portifolio_main #previous_jobs #design {
-  grid-row: 4/5;
-}
-#portifolio_main #previous_jobs #development {
-  grid-row: 5/6;
-}
-#portifolio_main section {
-  padding: 40px;
-}
-#portifolio_main section h2 {
-  border-bottom: 2px solid #e6bd43;
-  padding: 10px;
-}
-#portifolio_main section nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0;
-  list-style: none;
-}
-#portifolio_main section nav ul li a {
-  margin: 5px;
-  border: 1px solid #000;
-  padding: 5px;
-  text-decoration: none;
-}
-#portifolio_main section section {
-  padding: 0;
-}
-#portifolio_main section section h3 {
-  border-bottom: 2px solid #e6bd43;
-  padding: 10px;
-  text-align: center;
-}
-
-.port_article_controller {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.port_article_controller h3 {
-  width: 100%;
-}
-.port_article_controller article {
-  display: flex;
-  flex-direction: column;
-  max-width: 692px;
-  min-width: 200px;
-  flex-grow: 1;
-  margin: 10px 0;
-}
-.port_article_controller article img {
-  object-fit: contain;
-}
-
-#portifolio_background {
-  position: relative;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 300px;
-}
-#portifolio_background h1 {
-  position: relative;
-  color: #000;
-  text-align: center;
-  top: 2em;
-}
-
-#portifolio_background:before {
-  content: " ";
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.4;
-  background: url(../img/mobile_on_notebook.webp) #dddddd;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 #map {
   height: 300px;
   width: 100%;
 }
 
-footer {
-  background-color: #000;
-}
-footer div {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  max-width: 1600px;
-  /* I am not using the shorthand margin here since this will be used on taggs that may have a margin on the vertical axis.
-  normaly changes that are in the sass file will have priority over partials but i do this to make sure there will be no issues */
-  margin-left: auto;
-  margin-right: auto;
-}
-footer div a {
-  align-self: center;
-  margin: 10px;
-  font-size: 2rem;
-}
-footer div a img {
-  width: 120px;
-  height: 120px;
-}
-footer div p {
-  color: #fff;
-  align-self: center;
-}
-footer div ul {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-  margin: 10px;
-  padding: 0;
-}
-footer div ul li {
-  list-style: none;
-  margin: 10px;
-}
-footer div ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: 800;
-  padding: 10px;
-  font-family: "Open Sans", sans-serif;
-}
-
-.yellow_hover_btn {
-  background-color: #e6bd43;
-  color: #000;
-}
-
-.category_hover_btn {
-  color: #000;
-}
-
+/* Desktop spesific css */
 @media only screen and (min-width: 700px) {
+  /* General taggs */
   header nav {
     flex-wrap: wrap;
     flex-direction: row;
@@ -489,6 +526,23 @@ footer div ul li a {
   header nav ol li {
     margin: 5px;
   }
+  footer div {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  footer div ul {
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 0 10px;
+  }
+  footer div ul li {
+    margin: 5px;
+  }
+  .yellow_hover_btn:hover, .category_hover_btn:hover {
+    background-color: #000;
+    color: #e6bd43;
+  }
+  /* Index page spesific taggs */
   #home_main {
     grid-template-areas: "headline headline headline" ". subheading ." "about_company about_company about_company" "our_services our_services our_services";
   }
@@ -566,6 +620,20 @@ footer div ul li a {
   #home_main #services article {
     max-width: 300px;
   }
+  aside form {
+    justify-content: center;
+  }
+  aside form label {
+    text-align: center;
+    width: 100%;
+  }
+  aside form input[type=email] {
+    width: 25%;
+  }
+  aside form input[type=submit] {
+    width: 25%;
+  }
+  /* Portfolio page specific taggs */
   #portifolio_main #previous_jobs {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
@@ -585,6 +653,15 @@ footer div ul li a {
   #portifolio_main #previous_jobs #development {
     grid-column: 1/4;
   }
+  .port_article_controller article {
+    margin: 10px;
+    transform: scale(100%);
+    transition: transform 1s ease;
+  }
+  .port_article_controller article:hover {
+    transform: scale(105%);
+  }
+  /* about page spesific taggs */
   #main_about {
     grid-template-areas: "about_company about_company about_company" "services services services" "clients clients clients" "contact_form contact_form contact_form";
   }
@@ -610,41 +687,11 @@ footer div ul li a {
     grid-template-areas: ". heading heading ." "message_form message_form contact_info contact_info" "map map map map";
     grid-template-columns: repeat(4, 1fr);
   }
-  .port_article_controller article {
-    margin: 10px;
-    transform: scale(100%);
-    transition: transform 1s ease;
-  }
-  .port_article_controller article:hover {
-    transform: scale(105%);
-  }
-  aside form {
-    justify-content: center;
-  }
-  aside form label {
-    text-align: center;
-    width: 100%;
-  }
-  aside form input[type=email] {
-    width: 25%;
-  }
-  aside form input[type=submit] {
-    width: 25%;
-  }
-  footer div {
-    flex-wrap: wrap;
-    flex-direction: row;
-  }
-  footer div ul {
-    flex-direction: row;
-    justify-content: flex-end;
-    margin: 0 10px;
-  }
-  footer div ul li {
-    margin: 5px;
-  }
-  .yellow_hover_btn:hover, .category_hover_btn:hover {
-    background-color: #000;
-    color: #e6bd43;
+}
+/* This is here to ensure that the button to get back to the top don't move outside of the set max width of 1600px
+This could be more dynamicaly done with JavaScript but i wanted to se if i could do something similar using only css*/
+@media only screen and (min-width: 1600px) {
+  #link_to_top {
+    right: calc((100vw - 1600px) / 2 + 10px);
   }
 }/*# sourceMappingURL=style.css.map */

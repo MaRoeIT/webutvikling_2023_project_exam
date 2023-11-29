@@ -6,9 +6,138 @@
     box-sizing: border-box;
 }
 
+/* General tags */
+
+header{
+    nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @include max_size_properties;
+        #skip_to_main{
+            position: absolute;
+            top: -100px;
+            left: auto;
+            overflow: hidden;
+        }
+        #skip_to_main:focus{
+            position: fixed;
+            font-weight: 600;
+            padding: 10px 20px 15px 20px;
+            border-radius: 10%;
+            margin: 0;
+            top: -5px;
+            left: calc(50vw - 93.5px);
+            color: $black_color;
+            background-color: $yellow_color;
+            text-decoration: none;
+            z-index: 2;
+        }
+        a{
+            align-self: center;
+            margin: 10px;
+            img{
+                width: 120px;
+                height: 120px;
+            }
+        }
+        ol{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+            padding: 0;
+            li{
+                list-style: none;
+                margin: 10px;
+                a{
+                    text-decoration: none;
+                    color: $black_color;
+                    font-weight: 800;
+                    padding: 10px;
+                    font-family: 'Open Sans', sans-serif;
+                }
+                #selected_page{
+                    text-decoration: underline solid $yellow_color 3px;
+                } 
+            }
+        }
+    }
+}
+
 main{
     font-family: 'Open Sans', sans-serif;
 }
+
+footer{
+    background-color: $black_color;
+    height: 200px;
+    div{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @include max_size_properties;
+        a{
+            align-self: center;
+            margin: 10px;
+            font-size: 2rem;
+            img{
+                width: 120px;
+                height: 120px;
+            }        
+        }
+        
+        p{
+            color: $white_color;
+            align-self: center;
+        }
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+            padding: 0;
+            li{
+                list-style: none;
+                margin: 10px;
+                a{
+                    text-decoration: none;
+                    color: $white_color;
+                    font-weight: 800;
+                    padding: 10px;
+                    font-family: 'Open Sans', sans-serif;
+                }
+            }
+        }
+    }
+}
+
+#link_to_top{
+    position: fixed;
+    bottom: 40px;
+    right: 10px;
+    a{
+        font-size: 2rem;
+        background-color: $black_color;
+        padding: 15px;
+        color: $yellow_color;
+        border-radius: 10%;
+        border: 1px solid $yellow_color;
+    }
+}
+
+.yellow_hover_btn{
+    background-color: $yellow_color;
+    color: $black_color;
+}
+
+.category_hover_btn{
+    color: $black_color;
+}
+
+/* Index page spesific taggs */
 
 #home_main{
     display: grid;
@@ -51,7 +180,35 @@ main{
     }
     #home_headline{
         grid-area: headline;
+        position: relative;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        video{
+            display: none;
+        }
+        h1{
+            position: relative;
+            text-align: center;
+            width: 70%;
+        }
+        p{
+            position: relative;
+            text-align: center;
+            width: 70%;
+        }
+        a{
+            position: relative;
+            border: none;
+            padding: 10px;
+            text-decoration: none;
+        }
     }
+    #home_headline:before{
+        @include opacity_background_image;
+    }    
     #subheading{
         grid-area: subheading;
     }
@@ -63,6 +220,134 @@ main{
         grid-area: our_services;
     }
 }
+
+aside{
+    background-color: $light_gray_color;
+    padding: 40px 15px;
+    @include max_size_properties;
+    form{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        label{
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin: 20px;
+        }
+        input{
+            padding: 10px;
+            border: none;
+        }
+        input[type=email]{
+            width: 60%;
+            font-family: 'Open Sans', sans-serif;
+        }
+        input[type=submit]{
+            width: 37%;
+            font-weight: 700;
+            background-color: $yellow_color;
+            font-family: 'Open Sans', sans-serif;
+        }
+    }
+}
+
+/* portfolio spesific taggs */
+
+#portifolio_main{
+    @include max_size_properties;
+    #previous_jobs{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, auto);
+        h2{
+            grid-row: 1/2;
+        }
+        nav{
+            grid-row: 2/3;
+        }
+        #branding{
+            grid-row: 3/4;
+        }
+        #design{
+            grid-row: 4/5;
+        }
+        #development{
+            grid-row: 5/6;
+        }
+    }
+    section{
+        padding: 40px;
+        h2{
+            border-bottom: 2px solid $yellow_color;
+            padding: 10px;
+        }
+        nav{
+            ul{
+                display: flex;
+                flex-wrap: wrap;
+                padding: 0;
+                list-style: none;
+                li{
+                    a{
+                        margin: 5px;
+                        border: 1px solid $black_color;
+                        padding: 5px;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        section{
+            padding: 0;
+            h3{
+                border-bottom: 2px solid $yellow_color;
+                padding: 10px;
+                text-align: center; 
+            }
+        }
+    }
+}
+
+#portifolio_background{
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    h1{
+        position: relative;
+        color: $black_color;
+        text-align: center;
+        top: 2em;
+    }
+}
+
+#portifolio_background:before{
+    @include opacity_background_image;
+}
+
+.port_article_controller{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    h3{
+        width: 100%;
+    }
+    article{
+        display: flex;
+        flex-direction: column;
+        max-width: 692px;
+        min-width: 200px;
+        flex-grow: 1;
+        margin: 10px 0;
+        img{
+            object-fit: contain;
+        }
+    }
+}
+
+/* about page spesific taggs */
 
 #main_about{
     display: grid;
@@ -193,263 +478,17 @@ main{
     }
 }
 
-aside{
-    background-color: $light_gray_color;
-    padding: 40px 15px;
-    @include max_size_properties;
-    form{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        label{
-            font-weight: 700;
-            font-size: 1.5rem;
-            margin: 20px;
-        }
-        input{
-            padding: 10px;
-            border: none;
-        }
-        input[type=email]{
-            width: 60%;
-            font-family: 'Open Sans', sans-serif;
-        }
-        input[type=submit]{
-            width: 37%;
-            font-weight: 700;
-            background-color: $yellow_color;
-            font-family: 'Open Sans', sans-serif;
-        }
-    }
-}
-
-
-header{
-    nav{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        @include max_size_properties;
-        a{
-            align-self: center;
-            margin: 10px;
-            img{
-                width: 120px;
-                height: 120px;
-            }
-        }
-        ol{
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: column;
-            align-items: center;
-            margin: 10px;
-            padding: 0;
-            li{
-                list-style: none;
-                margin: 10px;
-                a{
-                    text-decoration: none;
-                    color: $black_color;
-                    font-weight: 800;
-                    padding: 10px;
-                    font-family: 'Open Sans', sans-serif;
-                }
-                #selected_page{
-                    text-decoration: underline solid $yellow_color 3px;
-                } 
-            }
-        }
-    }
-}
-
-#home_main{
-    #home_headline{
-        position: relative;
-        height: 500px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        video{
-            display: none;
-        }
-        h1{
-            position: relative;
-            text-align: center;
-            width: 70%;
-        }
-        p{
-            position: relative;
-            text-align: center;
-            width: 70%;
-        }
-        a{
-            position: relative;
-            border: none;
-            padding: 10px;
-            text-decoration: none;
-        }
-    }
-    #home_headline:before{
-        @include opacity_background_image;
-    }    
-}
-
-#portifolio_main{
-    @include max_size_properties;
-    #previous_jobs{
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(5, auto);
-        h2{
-            grid-row: 1/2;
-        }
-        nav{
-            grid-row: 2/3;
-        }
-        #branding{
-            grid-row: 3/4;
-        }
-        #design{
-            grid-row: 4/5;
-        }
-        #development{
-            grid-row: 5/6;
-        }
-    }
-    section{
-        padding: 40px;
-        h2{
-            border-bottom: 2px solid $yellow_color;
-            padding: 10px;
-        }
-        nav{
-            ul{
-                display: flex;
-                flex-wrap: wrap;
-                padding: 0;
-                list-style: none;
-                li{
-                    a{
-                        margin: 5px;
-                        border: 1px solid $black_color;
-                        padding: 5px;
-                        text-decoration: none;
-                    }
-                }
-            }
-        }
-        section{
-            padding: 0;
-            h3{
-                border-bottom: 2px solid $yellow_color;
-                padding: 10px;
-                text-align: center; 
-            }
-        }
-    }
-}
-
-
-.port_article_controller{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    h3{
-        width: 100%;
-    }
-    article{
-        display: flex;
-        flex-direction: column;
-        max-width: 692px;
-        min-width: 200px;
-        flex-grow: 1;
-        margin: 10px 0;
-        img{
-            object-fit: contain;
-        }
-    }
-}
-
-#portifolio_background{
-    position: relative;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 300px;
-    h1{
-        position: relative;
-        color: $black_color;
-        text-align: center;
-        top: 2em;
-    }
-}
-
-#portifolio_background:before{
-    @include opacity_background_image;
-}
-
 #map{
     height: 300px;
     width: 100%;
 }
 
-footer{
-    background-color: $black_color;
-    div{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        @include max_size_properties;
-        a{
-            align-self: center;
-            margin: 10px;
-            font-size: 2rem;
-            img{
-                width: 120px;
-                height: 120px;
-            }        
-        }
-        
-        p{
-            color: $white_color;
-            align-self: center;
-        }
-        ul{
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: column;
-            align-items: center;
-            margin: 10px;
-            padding: 0;
-            li{
-                list-style: none;
-                margin: 10px;
-                a{
-                    text-decoration: none;
-                    color: $white_color;
-                    font-weight: 800;
-                    padding: 10px;
-                    font-family: 'Open Sans', sans-serif;
-                }
-            }
-        }
-    }
-    
-}
-
-.yellow_hover_btn{
-    background-color: $yellow_color;
-    color: $black_color;
-}
-
-.category_hover_btn{
-    color: $black_color;
-}
+/* Desktop spesific css */
 
 @media only screen and (min-width: 700px){
+
+    /* General taggs */
+
     header{
         nav{
             flex-wrap: wrap;
@@ -464,6 +503,30 @@ footer{
             }
         }
     }
+
+    footer{
+        div{
+            flex-wrap: wrap;
+            flex-direction: row;
+            ul{
+                flex-direction: row;
+                justify-content: flex-end;
+                margin: 0 10px;
+                li{
+                    margin: 5px;
+                }
+            }  
+        }
+        
+    }
+
+    .yellow_hover_btn:hover, .category_hover_btn:hover{
+        background-color: $black_color;
+        color: $yellow_color;
+    }
+
+    /* Index page spesific taggs */
+
     #home_main{
         grid-template-areas: "headline headline headline" ". subheading ." "about_company about_company about_company" "our_services our_services our_services";
         #home_headline{
@@ -543,6 +606,24 @@ footer{
         }    
     }
 
+    aside{
+        form{
+            justify-content: center;
+            label{
+                text-align: center;
+                width: 100%;
+            }
+            input[type=email]{
+                width: 25%;
+            }
+            input[type=submit]{
+                width: 25%;
+            }
+        }
+    }
+
+    /* Portfolio page specific taggs */
+
     #portifolio_main{
         #previous_jobs{
             grid-template-columns: 1fr 1fr 1fr;
@@ -564,6 +645,19 @@ footer{
             }
         }
     }
+
+    .port_article_controller{
+        article{
+            margin: 10px;
+            transform: scale(100%);
+            transition: transform 1s ease;
+        }
+        article:hover{
+            transform: scale(105%);
+        }
+    }
+
+    /* about page spesific taggs */
 
     #main_about{
         grid-template-areas: "about_company about_company about_company" "services services services" "clients clients clients" "contact_form contact_form contact_form";
@@ -592,55 +686,12 @@ footer{
             grid-template-columns: repeat(4, 1fr);
         }    
     }
+}
 
-
-    .port_article_controller{
-        article{
-            margin: 10px;
-            transform: scale(100%);
-            transition: transform 1s ease;
-        }
-        article:hover{
-            transform: scale(105%);
-        }
-    }
-
-    aside{
-        form{
-            justify-content: center;
-            label{
-                text-align: center;
-                width: 100%;
-            }
-            input[type=email]{
-                width: 25%;
-            }
-            input[type=submit]{
-                width: 25%;
-            }
-        }
-    }
-    
-
-    footer{
-        div{
-            flex-wrap: wrap;
-            flex-direction: row;
-            ul{
-                flex-direction: row;
-                justify-content: flex-end;
-                margin: 0 10px;
-                li{
-                    margin: 5px;
-                }
-            }  
-        }
-        
-    }
-
-    .yellow_hover_btn:hover, .category_hover_btn:hover{
-        background-color: $black_color;
-        color: $yellow_color;
-    }
-
+/* This is here to ensure that the button to get back to the top don't move outside of the set max width of 1600px
+This could be more dynamicaly done with JavaScript but i wanted to se if i could do something similar using only css*/
+@media only screen and (min-width: 1600px){
+    #link_to_top{
+        right: calc((100vw - 1600px)/2 + 10px);
+    }    
 }
