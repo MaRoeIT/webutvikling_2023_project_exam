@@ -25,6 +25,7 @@
         <link rel="stylesheet" href="icons/fontawsome_icons/css/all.min.css">
         <link rel="stylesheet" href="icons/fontawsome_icons/css/all.css">
         <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link rel="icon" href="/img/logo1.png" type="image/icon">
 
         <title>Bytebounce fast and sustainable code</title>
     </head>
@@ -50,11 +51,15 @@
                 </ol>  
             </nav>
         </header>
-        <main id="home_main">
+        <main id="home_main" itemscope itemtype="https://schema.org/Organization">
+            <meta itemprop="legalName" content="Bytebounce">
+            <meta itemprop="address" content="B R A Veien 4, 1757 Halden">
+            <meta itemprop="email" content="postmottak@hiof.no">
+            <meta itemprop="telephone" content="69 60 80 00">
             <section id="home_headline">
                 <video autoplay muted loop src="./videos/mountains.mp4"></video>
                 <h1>Compelling headline</h1>
-                <p>
+                <p itemprop="slogan">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 </p>
@@ -68,9 +73,9 @@
                 </p>
             </section>
             <section id="home_about">
-                <img src="img/placeholder_image_400x400.png" alt="a picture of our company office. A large funkies building">
+                <img src="img/placeholder_image_400x400.png" alt="a picture of our company office. A large funkies building" itemprop="image">
                 <h2>About our company</h2>
-                <p>
+                <p itemprop="description">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, Maecenas in lobortis libero, at dignissim lorem.
                     Nullam scelerisque magna nibh, quis rutrum tortor venenatis sit amet.
                     Aenean condimentum dapibus dolor, eu blandit nunc. Praesent posuere dolor vitae lectus congue, vel finibus urna consequat. 
@@ -78,30 +83,30 @@
                 </p>
                 <a href="about.html" class="yellow_hover_btn">Read more about us</a>
             </section>
-            <section id="services">
+            <section id="services" itemscope itemtype="https://schema.org/Service">
                 <h2>Our services</h2>
                 <!-- I haven't added aria labels to the font awsome icons here because they are just for style and not content in them selves.
                 the heading and paragraph is the content. -->
                 <!-- I am hiding the icons since they give no content for screen readers. -->
                 <article>
                     <i class="fa-solid fa-users" aria-hidden="true"></i>
-                    <h3>Branding</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    <h3 itemprop="category">Branding</h3>
+                    <p itemprop="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 </article>
                 <article>
                     <i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>
-                    <h3>Design</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    <h3 itemprop="category">Design</h3>
+                    <p itemprop="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 </article>
                 <article>
                     <i class="fa-solid fa-code" aria-hidden="true"></i>
-                    <h3>Development</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    <h3 itemprop="category">Development</h3>
+                    <p itemprop="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 </article>
                 <article>
                     <i class="fa-solid fa-wifi" aria-hidden="true"></i>
-                    <h3>Support</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    <h3 itemprop="category">Support</h3>
+                    <p itemprop="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 </article>
             </section>
         </main>
