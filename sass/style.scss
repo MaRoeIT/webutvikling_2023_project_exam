@@ -1,5 +1,6 @@
 @import "partials/colors";
 @import "partials/mixins";
+@import "partials/fonts";
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700&display=swap');
 
 *{
@@ -14,12 +15,15 @@ header{
         flex-direction: column;
         justify-content: space-between;
         @include max_size_properties;
+
+        /* Skip to main content button that apears when focused by navigating throug the page with the keyboard */
         #skip_to_main{
             position: absolute;
             top: -100px;
             left: auto;
             overflow: hidden;
         }
+
         #skip_to_main:focus{
             position: fixed;
             font-weight: 600;
@@ -27,20 +31,24 @@ header{
             border-radius: 10%;
             margin: 0;
             top: -5px;
+            /* The a taggs size is 187px so 50% of the viewport - half the size of the tagg
+            another way of centering a element */
             left: calc(50vw - 93.5px);
             color: $black_color;
             background-color: $yellow_color;
             text-decoration: none;
+            /* Makes sure that the element is in front of everything else while the user scrolls down */
             z-index: 2;
         }
+
         a{
             align-self: center;
             margin: 10px;
             img{
-                width: 120px;
-                height: 120px;
+                @include logo_size;
             }
         }
+
         ol{
             display: flex;
             flex-wrap: wrap;
@@ -48,16 +56,19 @@ header{
             align-items: center;
             margin: 10px;
             padding: 0;
+
             li{
                 list-style: none;
                 margin: 10px;
+
                 a{
                     text-decoration: none;
                     color: $black_color;
                     font-weight: 800;
                     padding: 10px;
-                    font-family: 'Open Sans', sans-serif;
+                    font-family: $default_font;
                 }
+
                 #selected_page{
                     text-decoration: underline solid $yellow_color 3px;
                 } 
@@ -67,24 +78,24 @@ header{
 }
 
 main{
-    font-family: 'Open Sans', sans-serif;
+    font-family: $default_font;
 }
 
 footer{
     background-color: $black_color;
-    height: 200px;
+
     div{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         @include max_size_properties;
+
         a{
             align-self: center;
             margin: 10px;
             font-size: 2rem;
             img{
-                width: 120px;
-                height: 120px;
+                @include logo_size;
             }        
         }
         
@@ -92,6 +103,7 @@ footer{
             color: $white_color;
             align-self: center;
         }
+
         ul{
             display: flex;
             flex-wrap: wrap;
@@ -99,15 +111,17 @@ footer{
             align-items: center;
             margin: 10px;
             padding: 0;
+
             li{
                 list-style: none;
                 margin: 10px;
+
                 a{
                     text-decoration: none;
                     color: $white_color;
                     font-weight: 800;
                     padding: 10px;
-                    font-family: 'Open Sans', sans-serif;
+                    font-family: $default_font;
                 }
             }
         }
@@ -118,6 +132,7 @@ footer{
     position: fixed;
     bottom: 40px;
     right: 10px;
+
     a{
         font-size: 2rem;
         background-color: $black_color;
@@ -143,41 +158,47 @@ footer{
     display: grid;
     grid-template-areas: "headline" "subheading" "about_company" "our_services";
     @include max_size_properties;
+
     section{
         display: flex;
-        justify-items: center;
-        justify-content: space-around;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 40px;
+
         h2{
             text-align: center;
         }
+
         p{
             text-align: center;
         }
-        article{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            padding: 30px;
-            i{
-                font-size: 2rem;
-            }
-        }
+
         img{
             width: 100%;
             height: 100%;
         }
+
         a{
             border: 3px solid $black_color;
             padding: 15px;
             text-decoration: none;
             font-weight: 700;
         }
+
+        article{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 30px;
+
+            i{
+                font-size: 2rem;
+            }
+        }
     }
+
     #home_headline{
         grid-area: headline;
         position: relative;
@@ -186,19 +207,25 @@ footer{
         flex-direction: column;
         align-items: center;
         justify-content: center;
+
+        /* This is not a good way to hide a video on mobile version since it will still load the video
+        it could be fixed with JavaScript that make sure that the video only loads on desktop version */
         video{
             display: none;
         }
+
         h1{
             position: relative;
             text-align: center;
             width: 70%;
         }
+
         p{
             position: relative;
             text-align: center;
             width: 70%;
         }
+
         a{
             position: relative;
             border: none;
@@ -206,16 +233,22 @@ footer{
             text-decoration: none;
         }
     }
+
+    /* A way to have a background image and at the same time give it opacity, i have used a referance to do this.
+    The referance is written in the document */
     #home_headline:before{
         @include opacity_background_image;
-    }    
+    }
+
     #subheading{
         grid-area: subheading;
     }
+
     #home_about{
         background-color: $yellow_color;
         grid-area: about_company;
     }
+
     #services{
         grid-area: our_services;
     }
@@ -225,29 +258,34 @@ aside{
     background-color: $light_gray_color;
     padding: 40px 15px;
     @include max_size_properties;
+
     form{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
+
         label{
             font-weight: 700;
             font-size: 1.5rem;
             margin: 20px;
         }
+
         input{
             padding: 10px;
             border: none;
         }
+
         input[type=email]{
             width: 60%;
-            font-family: 'Open Sans', sans-serif;
+            font-family: $default_font;
         }
+
         input[type=submit]{
             width: 37%;
             font-weight: 700;
             background-color: $yellow_color;
-            font-family: 'Open Sans', sans-serif;
+            font-family: $default_font;
         }
     }
 }
@@ -256,38 +294,49 @@ aside{
 
 #portifolio_main{
     @include max_size_properties;
+
     #previous_jobs{
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(5, auto);
+
         h2{
             grid-row: 1/2;
         }
+
         nav{
             grid-row: 2/3;
         }
+
         #branding{
             grid-row: 3/4;
         }
+
         #design{
             grid-row: 4/5;
         }
+
         #development{
             grid-row: 5/6;
         }
     }
     section{
         padding: 40px;
+
         h2{
             border-bottom: 2px solid $yellow_color;
             padding: 10px;
         }
+
         nav{
             ul{
                 display: flex;
                 flex-wrap: wrap;
                 padding: 0;
                 list-style: none;
+                height: 100%;
+                gap: 5px;
+
                 li{
                     a{
                         margin: 5px;
@@ -298,8 +347,10 @@ aside{
                 }
             }
         }
+
         section{
             padding: 0;
+
             h3{
                 border-bottom: 2px solid $yellow_color;
                 padding: 10px;
@@ -315,6 +366,7 @@ aside{
     background-size: cover;
     background-position: center;
     height: 300px;
+
     h1{
         position: relative;
         color: $black_color;
@@ -331,9 +383,11 @@ aside{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+
     h3{
         width: 100%;
     }
+
     article{
         display: flex;
         flex-direction: column;
@@ -341,8 +395,10 @@ aside{
         min-width: 200px;
         flex-grow: 1;
         margin: 10px 0;
+
         img{
             object-fit: contain;
+            width: 100%;
         }
     }
 }
@@ -353,26 +409,32 @@ aside{
     display: grid;
     grid-template-areas: "about_company" "services" "clients" "contact_form";
     @include max_size_properties;
+
     #about_company{
         padding: 40px;
         background: url(../img/mobile_on_notebook.webp) $light_gray_color;
         background-repeat: no-repeat;
         background-size: cover;
         grid-area: about_company;
+
         article{
             display: flex;
             flex-direction: column;
             background-color: $opacity_light_grey;
             padding: 35px;
+
             h1{
                 order: 2;
             }
+
             span{
                 order: 1;
             }
+
             p{
                 order: 3;
             }
+
             a{
                 order: 4;
                 padding: 10px;
@@ -390,26 +452,32 @@ aside{
         align-items: center;
         padding: 40px;
         grid-area: services;
+
         h2{
             text-align: center;
         }
+
         p{
             text-align: center;
         }
+
         article{
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
             padding: 30px;
+
             i{
                 font-size: 2rem;
             }
         }
+
         img{
             width: 100%;
             height: 100%;
         }
+
         a{
             border: 3px solid $black_color;
             padding: 15px;
@@ -417,6 +485,7 @@ aside{
             font-weight: 700;
         }
     }
+
     #clients{
         display: flex;
         flex-wrap: wrap;
@@ -424,46 +493,58 @@ aside{
         gap: 20px;
         background-color: $yellow_color;
         grid-area: clients;
+
         h2{
             width: 100%;
             text-align: center;
         }
+
         img{
             margin: 10px;
         }
     }
+
     #contact_form{
         display: grid;
         grid-template-areas: "heading" "message_form" "contact_info" "map";
         background-color: $light_gray_color;
         grid-area: contact_form;
+
         h2{
             text-align: center;
             grid-area: heading;
         }
+
         #message_form{
             grid-area: message_form;
         }
+
         #contact_info{
             grid-area: contact_info;
         }
+
         article{
             padding: 20px;
+
             form{
                 display: flex;
                 flex-direction: column;
+
                 input, textarea{
                     border: none;
                     margin: 10px 0;
                     padding: 10px 5px;
                 }
+
                 input[type=submit]{
                     width: 140px;
                 }
             }
+
             ul{
                 list-style: none;
                 padding: 0;
+
                 li{
                     i{
                         margin-right: 20px;
@@ -472,6 +553,7 @@ aside{
                 }
             }
         }
+
         div{
             grid-area: map;
         }
@@ -493,10 +575,12 @@ aside{
         nav{
             flex-wrap: wrap;
             flex-direction: row;
+
             ol{
                 flex-direction: row;
                 justify-content: flex-end;
                 margin: 0 10px;
+
                 li{
                     margin: 5px;
                 }
@@ -505,13 +589,17 @@ aside{
     }
 
     footer{
+        height: 200px;
+
         div{
             flex-wrap: wrap;
             flex-direction: row;
+
             ul{
                 flex-direction: row;
                 justify-content: flex-end;
                 margin: 0 10px;
+
                 li{
                     margin: 5px;
                 }
@@ -529,10 +617,12 @@ aside{
 
     #home_main{
         grid-template-areas: "headline headline headline" ". subheading ." "about_company about_company about_company" "our_services our_services our_services";
+
         #home_headline{
             position: relative;
             height: 500px;
             background-image: none;
+
             video{
                 display: block;
                 object-fit: cover;
@@ -542,19 +632,17 @@ aside{
                 position: absolute;
                 opacity: 0.6;
             }
+
             h1{
                 z-index: 1;
-                position: relative;
-                text-align: center;
             }
+
             p{
                 z-index: 1;
-                position: relative;
-                text-align: center;
             }
+
             a{
                 z-index: 1;
-                position: relative;
             }
         }
         #home_headline:before{
@@ -566,6 +654,7 @@ aside{
             grid-template-rows: 1fr 1fr 2fr;
             height: 500px;
             column-gap: 30px;
+
             img{
                 min-width: 300px;
                 max-width: 400px;
@@ -573,18 +662,21 @@ aside{
                 grid-column: 1/2;
                 grid-row: 1/4;
             }
+
             h2{
                 justify-self: start;
                 align-self: end;
                 grid-column: 2/3;
                 grid-row: 1/2;
             }
+
             p{
                 text-align: left;
                 align-self: stretch;
                 grid-column: 2/3;
                 grid-row: 2/3;
             }
+
             a{
                 justify-self: start;
                 align-self: start;
@@ -592,30 +684,35 @@ aside{
                 grid-row: 3/4;
             }
         }
+
         #services{
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+
             h2{
                 width: 100%;
             }
+
             article{
                 max-width: 300px;
             }
-
         }    
     }
 
     aside{
         form{
             justify-content: center;
+
             label{
                 text-align: center;
                 width: 100%;
             }
+
             input[type=email]{
                 width: 25%;
             }
+
             input[type=submit]{
                 width: 25%;
             }
@@ -628,18 +725,23 @@ aside{
         #previous_jobs{
             grid-template-columns: 1fr 1fr 1fr;
             gap: 10px;
+
             h2{
                 grid-column: 1/4;
             }
+
             nav{
                 grid-column: 1/4;
             }
+
             #branding{
                 grid-column: 1/4;
             }
+
             #design{
                 grid-column: 1/4;
             }
+
             #development{
                 grid-column: 1/4;
             }
@@ -652,6 +754,7 @@ aside{
             transform: scale(100%);
             transition: transform 1s ease;
         }
+
         article:hover{
             transform: scale(105%);
         }
@@ -661,6 +764,7 @@ aside{
 
     #main_about{
         grid-template-areas: "about_company about_company about_company" "services services services" "clients clients clients" "contact_form contact_form contact_form";
+
         #about_company{
             article{
                 /* I haven't used flex og grid her to place this article box, both to show that i know how to do it in other ways than with only flex and grid
@@ -670,13 +774,16 @@ aside{
                 min-width: 400px;
             }
         }
+
         #services{
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+
             h2{
                 width: 100%;
             }
+
             article{
                 max-width: 300px;
             }
